@@ -1,0 +1,43 @@
+    <h2>{{'SEARCH_USER' | translate}}</h2>
+<form class="form" ng-submit="search()">
+    <br />
+        <div class="row">
+            <div class="col-xs-12 col-md-6">
+                <label class="col-md-4 control-label" for="username">Username</label>  
+                <div class="col-md-8">
+                    <input id="username" name="username" placeholder="" class="form-control input-md" type="text">
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-6">
+                <label class="col-md-4 control-label" for="username">Firstname</label>  
+                <div class="col-md-8">
+                    <input id="username" name="username" placeholder="" class="form-control input-md" type="text">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-md-2">
+                <button class="btn btn-primary btn-block form-control" type="submit">Search</button>
+            </div>
+        </div>
+        <div class="row">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                    <th>{{'USERNAME' | translate}}</th>
+                    <th>{{'FIRSTNAME' | translate}}</th>
+                    <th>{{'LASTNAME' | translate}}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="user in users">
+                    <td>{{user.Username}}</td>
+                    <td>{{user.Firstname}}</td>
+                    <td>{{user.Lastname}}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+
+    </div>
+</form>

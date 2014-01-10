@@ -1,0 +1,306 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4CF9D24C-91DD-4BDD-AFB6-59D0EF3ABCD4}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Authentication.Web</RootNamespace>
+    <AssemblyName>Authentication.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <DontImportPostSharp>True</DontImportPostSharp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper">
+      <HintPath>..\packages\AutoMapper.3.1.0\lib\net40\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper.Net4">
+      <HintPath>..\packages\AutoMapper.3.1.0\lib\net40\AutoMapper.Net4.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.0.2\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.0.2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PostSharp">
+      <HintPath>..\packages\PostSharp.3.1.27\lib\net20\PostSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack">
+      <HintPath>..\packages\ServiceStack.3.9.71\lib\net35\ServiceStack.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Common">
+      <HintPath>..\packages\ServiceStack.Common.3.9.71\lib\net35\ServiceStack.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Interfaces">
+      <HintPath>..\packages\ServiceStack.Common.3.9.71\lib\net35\ServiceStack.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.OrmLite">
+      <HintPath>..\packages\ServiceStack.OrmLite.SqlServer.3.9.71\lib\net35\ServiceStack.OrmLite.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.OrmLite.SqlServer">
+      <HintPath>..\packages\ServiceStack.OrmLite.SqlServer.3.9.71\lib\net35\ServiceStack.OrmLite.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Redis">
+      <HintPath>..\packages\ServiceStack.Redis.3.9.71\lib\net35\ServiceStack.Redis.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.ServiceInterface">
+      <HintPath>..\packages\ServiceStack.3.9.71\lib\net35\ServiceStack.ServiceInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Text">
+      <HintPath>..\packages\ServiceStack.Text.3.9.71\lib\net35\ServiceStack.Text.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Woozle">
+      <HintPath>..\packages\Woozle.0.0.11-prerelease\lib\Woozle.dll</HintPath>
+    </Reference>
+    <Reference Include="Woozle.Model">
+      <HintPath>..\packages\Woozle.0.0.11-prerelease\lib\Woozle.Model.dll</HintPath>
+    </Reference>
+    <Reference Include="Woozle.Persistence">
+      <HintPath>..\packages\Woozle.0.0.11-prerelease\lib\Woozle.Persistence.dll</HintPath>
+    </Reference>
+    <Reference Include="Woozle.Persistence.Ef">
+      <HintPath>..\packages\Woozle-Ef.0.0.11-prerelease\lib\Woozle.Persistence.Ef.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="components\angular-cookies\.bower.json" />
+    <Content Include="components\angular-cookies\angular-cookies.js" />
+    <Content Include="components\angular-cookies\angular-cookies.min.js" />
+    <Content Include="components\angular-cookies\angular-cookies.min.js.map" />
+    <Content Include="components\angular-cookies\bower.json" />
+    <Content Include="components\angular-cookies\README.md" />
+    <Content Include="components\angular-mocks\.bower.json" />
+    <Content Include="components\angular-mocks\angular-mocks.js" />
+    <Content Include="components\angular-mocks\bower.json" />
+    <Content Include="components\angular-mocks\README.md" />
+    <Content Include="components\angular-ng-grid\ng-grid-2.0.6.debug.js" />
+    <Content Include="components\angular-ng-grid\ng-grid-2.0.6.min.js" />
+    <Content Include="components\angular-ng-grid\ng-grid.css" />
+    <Content Include="components\angular-ng-grid\ng-grid.min.css" />
+    <Content Include="components\angular-ng-grid\package.json" />
+    <Content Include="components\angular-ng-grid\README.md" />
+    <Content Include="components\angular-resource\.bower.json" />
+    <Content Include="components\angular-resource\angular-resource.js" />
+    <Content Include="components\angular-resource\angular-resource.min.js" />
+    <Content Include="components\angular-resource\angular-resource.min.js.map" />
+    <Content Include="components\angular-resource\bower.json" />
+    <Content Include="components\angular-resource\README.md" />
+    <Content Include="components\angular-route\.bower.json" />
+    <Content Include="components\angular-route\angular-route.js" />
+    <Content Include="components\angular-route\angular-route.min.js" />
+    <Content Include="components\angular-route\angular-route.min.js.map" />
+    <Content Include="components\angular-route\bower.json" />
+    <Content Include="components\angular-route\README.md" />
+    <Content Include="components\angular-sanitize\.bower.json" />
+    <Content Include="components\angular-sanitize\angular-sanitize.js" />
+    <Content Include="components\angular-sanitize\angular-sanitize.min.js" />
+    <Content Include="components\angular-sanitize\angular-sanitize.min.js.map" />
+    <Content Include="components\angular-sanitize\bower.json" />
+    <Content Include="components\angular-sanitize\README.md" />
+    <Content Include="components\angular-scenario\.bower.json" />
+    <Content Include="components\angular-scenario\angular-scenario.js" />
+    <Content Include="components\angular-scenario\bower.json" />
+    <Content Include="components\angular-scenario\jstd-scenario-adapter-config.js" />
+    <Content Include="components\angular-scenario\jstd-scenario-adapter.js" />
+    <Content Include="components\angular-scenario\README.md" />
+    <Content Include="components\angular-translate\.bower.json" />
+    <Content Include="components\angular-translate\angular-translate-loader-static-files.js" />
+    <Content Include="components\angular-translate\angular-translate.js" />
+    <Content Include="components\angular-translate\angular-translate.min.js" />
+    <Content Include="components\angular-translate\bower.json" />
+    <Content Include="components\angular-translate\README.md" />
+    <Content Include="components\angular\.bower.json" />
+    <Content Include="components\angular\angular-csp.css" />
+    <Content Include="components\angular\angular.js" />
+    <Content Include="components\angular\angular.min.js" />
+    <Content Include="components\angular\angular.min.js.gzip" />
+    <Content Include="components\angular\angular.min.js.map" />
+    <Content Include="components\angular\bower.json" />
+    <Content Include="components\angular\README.md" />
+    <Content Include="components\bootstrap-3.0.0\bootstrap.js" />
+    <Content Include="components\bootstrap-3.0.0\bootstrap.min.js" />
+    <Content Include="components\es5-shim\.bower.json" />
+    <Content Include="components\es5-shim\.gitignore" />
+    <Content Include="components\es5-shim\CHANGES" />
+    <Content Include="components\es5-shim\CONTRIBUTORS.md" />
+    <Content Include="components\es5-shim\es5-sham.js" />
+    <Content Include="components\es5-shim\es5-sham.map" />
+    <Content Include="components\es5-shim\es5-sham.min.js" />
+    <Content Include="components\es5-shim\es5-shim.js" />
+    <Content Include="components\es5-shim\es5-shim.map" />
+    <Content Include="components\es5-shim\es5-shim.min.js" />
+    <Content Include="components\es5-shim\LICENSE" />
+    <Content Include="components\es5-shim\package.json" />
+    <Content Include="components\es5-shim\README.md" />
+    <Content Include="components\es5-shim\tests\helpers\h-kill.js" />
+    <Content Include="components\es5-shim\tests\helpers\h-matchers.js" />
+    <Content Include="components\es5-shim\tests\helpers\h.js" />
+    <Content Include="components\es5-shim\tests\index.html" />
+    <Content Include="components\es5-shim\tests\index.min.html" />
+    <Content Include="components\es5-shim\tests\lib\jasmine-html.js" />
+    <Content Include="components\es5-shim\tests\lib\jasmine.css" />
+    <Content Include="components\es5-shim\tests\lib\jasmine.js" />
+    <Content Include="components\es5-shim\tests\lib\jasmine_favicon.png" />
+    <Content Include="components\es5-shim\tests\lib\json2.js" />
+    <Content Include="components\es5-shim\tests\spec\s-array.js" />
+    <Content Include="components\es5-shim\tests\spec\s-date.js" />
+    <Content Include="components\es5-shim\tests\spec\s-function.js" />
+    <Content Include="components\es5-shim\tests\spec\s-number.js" />
+    <Content Include="components\es5-shim\tests\spec\s-object.js" />
+    <Content Include="components\es5-shim\tests\spec\s-string.js" />
+    <Content Include="components\jquery\.bower.json" />
+    <Content Include="components\jquery\.gitignore" />
+    <Content Include="components\jquery\bower.json" />
+    <Content Include="components\jquery\component.json" />
+    <Content Include="components\jquery\composer.json" />
+    <Content Include="components\jquery\jquery-migrate.js" />
+    <Content Include="components\jquery\jquery-migrate.min.js" />
+    <Content Include="components\jquery\jquery.js" />
+    <Content Include="components\jquery\jquery.min.js" />
+    <Content Include="components\jquery\jquery.min.map" />
+    <Content Include="components\jquery\package.json" />
+    <Content Include="components\jquery\README.md" />
+    <Content Include="components\json3\.bower.json" />
+    <Content Include="components\json3\bower.json" />
+    <Content Include="components\json3\lib\json3.js" />
+    <Content Include="components\json3\lib\json3.min.js" />
+    <Content Include="components\json3\LICENSE" />
+    <Content Include="components\json3\README.md" />
+    <Content Include="components\restangular\restangular.js" />
+    <Content Include="components\restangular\restangular.min.js" />
+    <Content Include="components\restangular\restangular.zip" />
+    <Content Include="components\textangular\textAngular.js" />
+    <Content Include="components\textangular\textAngular.min.js" />
+    <Content Include="components\underscore\.npmignore" />
+    <Content Include="components\underscore\.travis.yml" />
+    <Content Include="components\underscore\CNAME" />
+    <Content Include="components\underscore\CONTRIBUTING.md" />
+    <Content Include="components\underscore\favicon.ico" />
+    <Content Include="components\underscore\index.js" />
+    <Content Include="components\underscore\LICENSE" />
+    <Content Include="components\underscore\package.json" />
+    <Content Include="components\underscore\README.md" />
+    <Content Include="components\underscore\underscore-min.map" />
+    <Content Include="components\underscore\underscore.js" />
+    <Content Include="fonts\**\*.*" />
+    <Content Include="scripts\controllers\searchUser.js" />
+    <Content Include="translations\**\*.*" />
+    <Content Include="scripts\app.js" />
+    <Content Include="scripts\controllers\login.js" />
+    <Content Include="scripts\controllers\navigation.js" />
+    <Content Include="scripts\services\AuthenticationService.js" />
+    <Content Include="scripts\services\LoginContextService.js" />
+    <Content Include="scripts\services\MandatorSelectionService.js" />
+    <Content Include="scripts\services\NavigationService.js" />
+    <Content Include="scripts\services\UsersService.js" />
+    <Content Include="styles\**\*.*" />
+    <Content Include="views\login.html" />
+    <Content Include="views\main.html" />
+    <Content Include="views\searchUser.html" />
+    <Content Include="404.html" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="index.html" />
+    <Content Include="robots.txt" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppHost.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:2480/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="..\packages\PostSharp.3.1.27\tools\PostSharp.targets" Condition="Exists('..\packages\PostSharp.3.1.27\tools\PostSharp.targets')" />
+  <Target Name="EnsurePostSharpImported" BeforeTargets="BeforeBuild" Condition="'$(PostSharp30Imported)' == ''">
+    <Error Condition="!Exists('..\packages\PostSharp.3.1.27\tools\PostSharp.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://www.postsharp.net/links/nuget-restore." />
+    <Error Condition="Exists('..\packages\PostSharp.3.1.27\tools\PostSharp.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://www.postsharp.net/links/nuget-restore." />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

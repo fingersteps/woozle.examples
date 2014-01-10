@@ -68,3 +68,5 @@ C:\woozle.examples\Authentication\src\Authentication.Web\bin\Woozle.Persistence.
 C:\woozle.examples\Authentication\src\Authentication.Web\obj\Debug\Authentication.Web.csprojResolveAssemblyReference.cache
 C:\woozle.examples\Authentication\src\Authentication.Web\obj\Debug\Authentication.Web.dll
 C:\woozle.examples\Authentication\src\Authentication.Web\obj\Debug\Authentication.Web.pdb
+C:\woozle.examples\Authentication\src\Authentication.Web\bin\Authentication.Web.pssym
+C:\woozle.examples\Authentication\src\Authentication.Web\obj\Debug\Authentication.Web.dll.postsharp

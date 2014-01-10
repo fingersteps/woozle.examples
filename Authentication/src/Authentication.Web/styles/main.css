@@ -1,4 +1,28 @@
-/* Will be compiled down to a single stylesheet with your sass files */
+body {
+    padding-top: 60px;
+    padding-bottom: 40px;
+}
+
+.gridStyle {
+    width: auto;
+    height: 600px
+}
+.mainMenu {
+    height: 50px;
+}
+
+.form-control { margin-bottom: 15px; }
+
+
+.ta-editor {
+  min-height: 300px;
+  height: auto;
+  overflow: auto;
+  font-family: inherit;
+  font-size: 100%;
+}
+
+
 /* custom inclusion of right, left and below tabs */
 
 .tabs-below > .nav-tabs,

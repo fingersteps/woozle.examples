@@ -165,35 +165,6 @@
     <Content Include="components\angular\README.md" />
     <Content Include="components\bootstrap-3.0.0\bootstrap.js" />
     <Content Include="components\bootstrap-3.0.0\bootstrap.min.js" />
-    <Content Include="components\es5-shim\.bower.json" />
-    <Content Include="components\es5-shim\.gitignore" />
-    <Content Include="components\es5-shim\CHANGES" />
-    <Content Include="components\es5-shim\CONTRIBUTORS.md" />
-    <Content Include="components\es5-shim\es5-sham.js" />
-    <Content Include="components\es5-shim\es5-sham.map" />
-    <Content Include="components\es5-shim\es5-sham.min.js" />
-    <Content Include="components\es5-shim\es5-shim.js" />
-    <Content Include="components\es5-shim\es5-shim.map" />
-    <Content Include="components\es5-shim\es5-shim.min.js" />
-    <Content Include="components\es5-shim\LICENSE" />
-    <Content Include="components\es5-shim\package.json" />
-    <Content Include="components\es5-shim\README.md" />
-    <Content Include="components\es5-shim\tests\helpers\h-kill.js" />
-    <Content Include="components\es5-shim\tests\helpers\h-matchers.js" />
-    <Content Include="components\es5-shim\tests\helpers\h.js" />
-    <Content Include="components\es5-shim\tests\index.html" />
-    <Content Include="components\es5-shim\tests\index.min.html" />
-    <Content Include="components\es5-shim\tests\lib\jasmine-html.js" />
-    <Content Include="components\es5-shim\tests\lib\jasmine.css" />
-    <Content Include="components\es5-shim\tests\lib\jasmine.js" />
-    <Content Include="components\es5-shim\tests\lib\jasmine_favicon.png" />
-    <Content Include="components\es5-shim\tests\lib\json2.js" />
-    <Content Include="components\es5-shim\tests\spec\s-array.js" />
-    <Content Include="components\es5-shim\tests\spec\s-date.js" />
-    <Content Include="components\es5-shim\tests\spec\s-function.js" />
-    <Content Include="components\es5-shim\tests\spec\s-number.js" />
-    <Content Include="components\es5-shim\tests\spec\s-object.js" />
-    <Content Include="components\es5-shim\tests\spec\s-string.js" />
     <Content Include="components\jquery\.bower.json" />
     <Content Include="components\jquery\.gitignore" />
     <Content Include="components\jquery\bower.json" />
@@ -215,8 +186,6 @@
     <Content Include="components\restangular\restangular.js" />
     <Content Include="components\restangular\restangular.min.js" />
     <Content Include="components\restangular\restangular.zip" />
-    <Content Include="components\textangular\textAngular.js" />
-    <Content Include="components\textangular\textAngular.min.js" />
     <Content Include="components\underscore\.npmignore" />
     <Content Include="components\underscore\.travis.yml" />
     <Content Include="components\underscore\CNAME" />
@@ -270,6 +239,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+    <None Include="Properties\PublishProfiles\woozle-demo.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

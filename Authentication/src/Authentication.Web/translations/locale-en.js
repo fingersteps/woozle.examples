@@ -1,5 +1,5 @@
 {
-    "WELCOME_SIGN_IN": "Welcome to Woozle. Please sign in.",
+    "WELCOME_SIGN_IN": "Welcome to the Woozle demo application. Please sign in with usename 'user1' and password 'pass1'.",
     "LOGIN" : "Login",
     "LOGOUT" : "Logout",
     "ABOUT" : "About",

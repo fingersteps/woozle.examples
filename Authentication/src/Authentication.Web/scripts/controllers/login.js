@@ -5,6 +5,7 @@ angular.module('Woozle.DemoApplication')
             function ($rootScope, $scope, $location, $window,
                 AuthenticationService, UserService, MandatorSelectionService, LoginContextService) {
 
+                $scope.user = {"username" : "user1", "password" : "pass1"};
                 $scope.rememberme = true;
                 $scope.showProgress = false;
                 $scope.login = function (user, mandator) {

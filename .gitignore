@@ -1,3 +1,4 @@
+*.pubxml
 *.suo
 *.user
 _ReSharper.*

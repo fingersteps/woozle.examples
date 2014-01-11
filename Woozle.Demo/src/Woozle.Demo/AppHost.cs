@@ -2,7 +2,7 @@
 using Woozle.Host;
 using Woozle.Persistence.Ef.Dependencies;
 
-namespace Authentication.Web
+namespace Woozle.Demo
 {
     public class AppHost : WoozleHost
     {

@@ -7,12 +7,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{4CF9D24C-91DD-4BDD-AFB6-59D0EF3ABCD4}</ProjectGuid>
+    <ProjectGuid>{4DD4EEF6-1238-466B-B4FD-506065CAB265}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Authentication.Web</RootNamespace>
-    <AssemblyName>Authentication.Web</AssemblyName>
+    <RootNamespace>Woozle.Demo</RootNamespace>
+    <AssemblyName>Woozle.Demo</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -55,13 +55,15 @@
     <Reference Include="PostSharp">
       <HintPath>..\packages\PostSharp.3.1.27\lib\net20\PostSharp.dll</HintPath>
     </Reference>
-    <Reference Include="ServiceStack">
+    <Reference Include="ServiceStack, Version=3.9.71.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\ServiceStack.3.9.71\lib\net35\ServiceStack.dll</HintPath>
     </Reference>
     <Reference Include="ServiceStack.Common">
       <HintPath>..\packages\ServiceStack.Common.3.9.71\lib\net35\ServiceStack.Common.dll</HintPath>
     </Reference>
-    <Reference Include="ServiceStack.Interfaces">
+    <Reference Include="ServiceStack.Interfaces, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\ServiceStack.Common.3.9.71\lib\net35\ServiceStack.Interfaces.dll</HintPath>
     </Reference>
     <Reference Include="ServiceStack.OrmLite">
@@ -95,114 +97,82 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
-    <Reference Include="Woozle">
+    <Reference Include="Woozle, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Woozle.0.0.11-prerelease\lib\Woozle.dll</HintPath>
     </Reference>
-    <Reference Include="Woozle.Model">
+    <Reference Include="Woozle.Model, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Woozle.0.0.11-prerelease\lib\Woozle.Model.dll</HintPath>
     </Reference>
-    <Reference Include="Woozle.Persistence">
+    <Reference Include="Woozle.Persistence, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Woozle.0.0.11-prerelease\lib\Woozle.Persistence.dll</HintPath>
     </Reference>
-    <Reference Include="Woozle.Persistence.Ef">
+    <Reference Include="Woozle.Persistence.Ef, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Woozle-Ef.0.0.11-prerelease\lib\Woozle.Persistence.Ef.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="components\angular-cookies\.bower.json" />
+    <Compile Include="AppHost.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\packages\AutoMapper.3.1.0\lib\net40\AutoMapper.Net4.dll">
+      <Link>AutoMapper.Net4.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="404.html" />
     <Content Include="components\angular-cookies\angular-cookies.js" />
     <Content Include="components\angular-cookies\angular-cookies.min.js" />
-    <Content Include="components\angular-cookies\angular-cookies.min.js.map" />
-    <Content Include="components\angular-cookies\bower.json" />
-    <Content Include="components\angular-cookies\README.md" />
-    <Content Include="components\angular-mocks\.bower.json" />
     <Content Include="components\angular-mocks\angular-mocks.js" />
-    <Content Include="components\angular-mocks\bower.json" />
-    <Content Include="components\angular-mocks\README.md" />
     <Content Include="components\angular-ng-grid\ng-grid-2.0.6.debug.js" />
     <Content Include="components\angular-ng-grid\ng-grid-2.0.6.min.js" />
     <Content Include="components\angular-ng-grid\ng-grid.css" />
     <Content Include="components\angular-ng-grid\ng-grid.min.css" />
-    <Content Include="components\angular-ng-grid\package.json" />
-    <Content Include="components\angular-ng-grid\README.md" />
-    <Content Include="components\angular-resource\.bower.json" />
     <Content Include="components\angular-resource\angular-resource.js" />
     <Content Include="components\angular-resource\angular-resource.min.js" />
-    <Content Include="components\angular-resource\angular-resource.min.js.map" />
-    <Content Include="components\angular-resource\bower.json" />
-    <Content Include="components\angular-resource\README.md" />
-    <Content Include="components\angular-route\.bower.json" />
     <Content Include="components\angular-route\angular-route.js" />
     <Content Include="components\angular-route\angular-route.min.js" />
-    <Content Include="components\angular-route\angular-route.min.js.map" />
-    <Content Include="components\angular-route\bower.json" />
-    <Content Include="components\angular-route\README.md" />
-    <Content Include="components\angular-sanitize\.bower.json" />
     <Content Include="components\angular-sanitize\angular-sanitize.js" />
     <Content Include="components\angular-sanitize\angular-sanitize.min.js" />
-    <Content Include="components\angular-sanitize\angular-sanitize.min.js.map" />
-    <Content Include="components\angular-sanitize\bower.json" />
-    <Content Include="components\angular-sanitize\README.md" />
-    <Content Include="components\angular-scenario\.bower.json" />
     <Content Include="components\angular-scenario\angular-scenario.js" />
-    <Content Include="components\angular-scenario\bower.json" />
     <Content Include="components\angular-scenario\jstd-scenario-adapter-config.js" />
     <Content Include="components\angular-scenario\jstd-scenario-adapter.js" />
-    <Content Include="components\angular-scenario\README.md" />
-    <Content Include="components\angular-translate\.bower.json" />
     <Content Include="components\angular-translate\angular-translate-loader-static-files.js" />
     <Content Include="components\angular-translate\angular-translate.js" />
     <Content Include="components\angular-translate\angular-translate.min.js" />
-    <Content Include="components\angular-translate\bower.json" />
-    <Content Include="components\angular-translate\README.md" />
-    <Content Include="components\angular\.bower.json" />
     <Content Include="components\angular\angular-csp.css" />
     <Content Include="components\angular\angular.js" />
     <Content Include="components\angular\angular.min.js" />
-    <Content Include="components\angular\angular.min.js.gzip" />
-    <Content Include="components\angular\angular.min.js.map" />
-    <Content Include="components\angular\bower.json" />
-    <Content Include="components\angular\README.md" />
     <Content Include="components\bootstrap-3.0.0\bootstrap.js" />
     <Content Include="components\bootstrap-3.0.0\bootstrap.min.js" />
-    <Content Include="components\jquery\.bower.json" />
     <Content Include="components\jquery\.gitignore" />
-    <Content Include="components\jquery\bower.json" />
-    <Content Include="components\jquery\component.json" />
-    <Content Include="components\jquery\composer.json" />
     <Content Include="components\jquery\jquery-migrate.js" />
     <Content Include="components\jquery\jquery-migrate.min.js" />
     <Content Include="components\jquery\jquery.js" />
     <Content Include="components\jquery\jquery.min.js" />
-    <Content Include="components\jquery\jquery.min.map" />
-    <Content Include="components\jquery\package.json" />
-    <Content Include="components\jquery\README.md" />
-    <Content Include="components\json3\.bower.json" />
-    <Content Include="components\json3\bower.json" />
     <Content Include="components\json3\lib\json3.js" />
     <Content Include="components\json3\lib\json3.min.js" />
-    <Content Include="components\json3\LICENSE" />
-    <Content Include="components\json3\README.md" />
     <Content Include="components\restangular\restangular.js" />
     <Content Include="components\restangular\restangular.min.js" />
-    <Content Include="components\restangular\restangular.zip" />
-    <Content Include="components\underscore\.npmignore" />
-    <Content Include="components\underscore\.travis.yml" />
-    <Content Include="components\underscore\CNAME" />
-    <Content Include="components\underscore\CONTRIBUTING.md" />
     <Content Include="components\underscore\favicon.ico" />
     <Content Include="components\underscore\index.js" />
-    <Content Include="components\underscore\LICENSE" />
-    <Content Include="components\underscore\package.json" />
-    <Content Include="components\underscore\README.md" />
-    <Content Include="components\underscore\underscore-min.map" />
     <Content Include="components\underscore\underscore.js" />
-    <Content Include="fonts\**\*.*" />
-    <Content Include="scripts\controllers\searchUser.js" />
-    <Content Include="translations\**\*.*" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="index.html" />
+    <Content Include="robots.txt" />
     <Content Include="scripts\app.js" />
     <Content Include="scripts\controllers\login.js" />
     <Content Include="scripts\controllers\navigation.js" />
+    <Content Include="scripts\controllers\searchUser.js" />
     <Content Include="scripts\services\AuthenticationService.js" />
     <Content Include="scripts\services\LoginContextService.js" />
     <Content Include="scripts\services\MandatorSelectionService.js" />
@@ -214,38 +184,89 @@
     <Content Include="styles\bootstrap-3.0.0\bootstrap.min.css" />
     <Content Include="styles\bootstrap-3.0.0\bootstrap.vertical-tabs.css" />
     <Content Include="styles\font-awesome.min.css" />
-    <Content Include="styles\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="styles\fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="styles\fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="styles\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="styles\main.css" />
     <Content Include="styles\ng-grid.css" />
+    <Content Include="translations\locale-de.js" />
+    <Content Include="translations\locale-en.js" />
     <Content Include="views\login.html" />
     <Content Include="views\main.html" />
     <Content Include="views\searchUser.html" />
-    <Content Include="404.html" />
-    <Content Include="favicon.ico" />
-    <Content Include="Global.asax" />
-    <Content Include="index.html" />
-    <Content Include="robots.txt" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AppHost.cs" />
-    <Compile Include="Global.asax.cs">
-      <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
-    <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
+    <Content Include="components\angular\.bower.json" />
+    <Content Include="components\angular\angular.min.js.gzip" />
+    <Content Include="components\angular\angular.min.js.map" />
+    <Content Include="components\angular\bower.json" />
+    <Content Include="components\angular\README.md" />
+    <Content Include="components\angular-cookies\.bower.json" />
+    <Content Include="components\angular-cookies\angular-cookies.min.js.map" />
+    <Content Include="components\angular-cookies\bower.json" />
+    <Content Include="components\angular-cookies\README.md" />
+    <Content Include="components\angular-mocks\.bower.json" />
+    <Content Include="components\angular-mocks\bower.json" />
+    <Content Include="components\angular-mocks\README.md" />
+    <Content Include="components\angular-ng-grid\package.json" />
+    <Content Include="components\angular-ng-grid\README.md" />
+    <Content Include="components\angular-resource\.bower.json" />
+    <Content Include="components\angular-resource\angular-resource.min.js.map" />
+    <Content Include="components\angular-resource\bower.json" />
+    <Content Include="components\angular-resource\README.md" />
+    <Content Include="components\angular-route\.bower.json" />
+    <Content Include="components\angular-route\angular-route.min.js.map" />
+    <Content Include="components\angular-route\bower.json" />
+    <Content Include="components\angular-route\README.md" />
+    <Content Include="components\angular-sanitize\.bower.json" />
+    <Content Include="components\angular-sanitize\angular-sanitize.min.js.map" />
+    <Content Include="components\angular-sanitize\bower.json" />
+    <Content Include="components\angular-sanitize\README.md" />
+    <Content Include="components\angular-scenario\.bower.json" />
+    <Content Include="components\angular-scenario\bower.json" />
+    <Content Include="components\angular-scenario\README.md" />
+    <Content Include="components\angular-translate\.bower.json" />
+    <Content Include="components\angular-translate\bower.json" />
+    <Content Include="components\angular-translate\README.md" />
+    <Content Include="components\jquery\.bower.json" />
+    <Content Include="components\jquery\bower.json" />
+    <Content Include="components\jquery\component.json" />
+    <Content Include="components\jquery\composer.json" />
+    <Content Include="components\jquery\jquery.min.map" />
+    <Content Include="components\jquery\package.json" />
+    <Content Include="components\jquery\README.md" />
+    <Content Include="components\json3\.bower.json" />
+    <Content Include="components\json3\bower.json" />
+    <Content Include="components\json3\LICENSE" />
+    <Content Include="components\json3\README.md" />
+    <Content Include="components\restangular\restangular.zip" />
+    <Content Include="components\underscore\.npmignore" />
+    <Content Include="components\underscore\.travis.yml" />
+    <Content Include="components\underscore\CNAME" />
+    <Content Include="components\underscore\CONTRIBUTING.md" />
+    <Content Include="components\underscore\LICENSE" />
+    <Content Include="components\underscore\package.json" />
+    <Content Include="components\underscore\README.md" />
+    <Content Include="components\underscore\underscore-min.map" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="styles\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="styles\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="styles\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="packages.config" />
-    <None Include="Properties\PublishProfiles\woozle-demo.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -262,7 +283,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>0</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:2480/</IISUrl>
+          <IISUrl>http://localhost:13404/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

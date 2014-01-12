@@ -1,0 +1,24 @@
+    <h2>{{'SEARCH_PRODUCTS' | translate}}</h2>
+<form class="form" ng-submit="search()">
+        <div class="row">
+            <div class="col-xs-12 col-md-2">
+                <button class="btn btn-primary btn-block form-control" type="submit">Search</button>
+            </div>
+        </div>
+        <div class="row">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                    <th>{{'NAME' | translate}}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="product in products">
+                    <td>{{product.Name}}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+
+    </div>
+</form>

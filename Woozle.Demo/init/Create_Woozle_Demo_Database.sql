@@ -505,6 +505,7 @@ CREATE TABLE [woo].[ExternalSystem](
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
+
 /****** Object:  ForeignKey [FK_ExternalService_ExternalServiceType]    Script Date: 12/20/2013 11:19:35 ******/
 ALTER TABLE [woo].[ExternalSystem]  WITH CHECK ADD  CONSTRAINT [FK_ExternalService_ExternalServiceType] FOREIGN KEY([ExternalSystemTypeId])
 REFERENCES [woo].[ExternalSystemType] ([Id])
@@ -688,10 +689,9 @@ GO
 ALTER TABLE [woo].[UserMandatorRole] CHECK CONSTRAINT [FK_UserMandatorRole_User]
 GO
 
-
 ------------------------------------------------------------
 
--- Initializationscript for an example mandator
+-- Initializationscript to insert all needed data for woozle tables
 
 ------------------------------------------------------------
 
@@ -772,16 +772,16 @@ GO
 INSERT INTO [woo].[Translation]
            ([DefaultDescription])
      VALUES
-           ('User Management')
+           ('Product Management')
 GO
 INSERT INTO [woo].[TranslationItem]
            ([TranslationId]
            ,[LanguageId]
            ,[Description])
      VALUES
-           ((SELECT TOP 1 Id FROM woo.Translation where DefaultDescription = 'User Management')
+           ((SELECT TOP 1 Id FROM woo.Translation where DefaultDescription = 'Product Management')
            ,(SELECT TOP 1 Id FROM woo.[Language])
-           ,'User Management')
+           ,'Product Management')
 GO
 INSERT INTO [woo].[Module]
            ([Icon]
@@ -794,13 +794,13 @@ INSERT INTO [woo].[Module]
            ,[TranslationId])
      VALUES
            (null,
-           'User Management'
-           ,'Manages users'
+           'Product Management'
+           ,'Manages products'
            ,'0'
            ,1
            ,'TES'
            ,0
-           ,(SELECT TOP 1 Id FROM woo.Translation where DefaultDescription = 'User Management'))
+           ,(SELECT TOP 1 Id FROM woo.Translation where DefaultDescription = 'Product Management'))
 GO
 
 INSERT INTO [woo].[MandatorModules]
@@ -824,7 +824,7 @@ INSERT INTO [woo].[MandatorModules]
 		INSERT INTO woo.[Permission] (Name, [Description], LogicalId) values ('Funktion sichtbar', 'Sieht Funktion in der Navigation', 'FUNCTION')
 		
 		print('Insert Translations for function')
-		Insert into woo.Translation (DefaultDescription) values ('Search users');
+		Insert into woo.Translation (DefaultDescription) values ('Search products');
 
 		print('Insert function')
 		--Funktionen hinzufügen		
@@ -835,10 +835,10 @@ INSERT INTO [woo].[MandatorModules]
 			 TranslationId,
 			 Sequence) 
 		values 
-			('Search users', 
-			(select Id from woo.[Module] where Name='User Management'), 
-			'SearchUserV1', 
-			(select Id from woo.[Translation] where DefaultDescription='Search users'), 0)
+			('Search products', 
+			(select Id from woo.[Module] where Name='Product Management'), 
+			'SearchProductsV1', 
+			(select Id from woo.[Translation] where DefaultDescription='Search products'), 0)
 
 		print('Insert FunctionPermission entries')
 		--Berechtigungen hinzufügen		
@@ -847,7 +847,7 @@ INSERT INTO [woo].[MandatorModules]
 			FunctionId, 
 			PermissionId) 
 			values (1,
-			(Select Id from woo.[Function] where Name='Search users'), 
+			(Select Id from woo.[Function] where Name='Search products'), 
 			(Select Id from woo.[Permission] where Name='Funktion sichtbar'))
 
 		print('Insert MandatorRoleFunctionPermission entries')
@@ -855,12 +855,55 @@ INSERT INTO [woo].[MandatorModules]
 		values ((Select mr.Id from woo.[MandatorRole] mr inner join woo.[Mandator] m on mr.MandId = m.Id inner join woo.[Role] r 
 		on mr.RoleId = r.Id where m.Name='Mandator 1' and r.Name = 'Administrator'), 
 		(Select fp.Id from woo.[FunctionPermission] fp inner join woo.[Function] f on fp.FunctionId = f.Id inner join woo.[Permission] p 
-		on fp.PermissionId = p.Id where f.Name='Search users' and p.Name = 'Funktion sichtbar'))
+		on fp.PermissionId = p.Id where f.Name='Search products' and p.Name = 'Funktion sichtbar'))
 
 		INSERT INTO woo.[MandatorRoleFunctionPermission] (MandatorRoleId, FunctionPermissionId) 
 		values ((Select mr.Id from woo.[MandatorRole] mr inner join woo.[Mandator] m on mr.MandId = m.Id inner join woo.[Role] r 
 		on mr.RoleId = r.Id where m.Name='Mandator 2' and r.Name = 'Administrator'), 
 		(Select fp.Id from woo.[FunctionPermission] fp inner join woo.[Function] f on fp.FunctionId = f.Id inner join woo.[Permission] p 
-		on fp.PermissionId = p.Id where f.Name='Search users' and p.Name = 'Funktion sichtbar'))
+		on fp.PermissionId = p.Id where f.Name='Search products' and p.Name = 'Funktion sichtbar'))
+		GO
+		
+------------------------------------------------------------
+
+-- Initializationscript to add a schema, sample table and data for the demo application
+
+------------------------------------------------------------
+
+CREATE SCHEMA [demo] AUTHORIZATION [dbo]
+GO
+
+CREATE TABLE [demo].[Product](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[MandatorId] [int] NOT NULL,
+	[Name] [nvarchar](50) NOT NULL,
+ CONSTRAINT [PK_Product] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  ForeignKey [FK_Product_Mandator] ******/
+ALTER TABLE [demo].[Product]  WITH CHECK ADD  CONSTRAINT [FK_Product_Mandator] FOREIGN KEY([MandatorId])
+REFERENCES [woo].[Mandator] ([Id])
+GO
+ALTER TABLE [demo].[Product] CHECK CONSTRAINT [FK_Product_Mandator]
+GO
+
+INSERT INTO [demo].[Product] (MandatorId, Name) VALUES((select Id from woo.Mandator where Name='Mandator 1'), 'Apple')
+INSERT INTO [demo].[Product] (MandatorId, Name) VALUES((select Id from woo.Mandator where Name='Mandator 1'), 'Banana')
+INSERT INTO [demo].[Product] (MandatorId, Name) VALUES((select Id from woo.Mandator where Name='Mandator 1'), 'Pineapple')
+INSERT INTO [demo].[Product] (MandatorId, Name) VALUES((select Id from woo.Mandator where Name='Mandator 1'), 'Coconut')
+INSERT INTO [demo].[Product] (MandatorId, Name) VALUES((select Id from woo.Mandator where Name='Mandator 1'), 'Orange')
+INSERT INTO [demo].[Product] (MandatorId, Name) VALUES((select Id from woo.Mandator where Name='Mandator 1'), 'Kiwi')
+INSERT INTO [demo].[Product] (MandatorId, Name) VALUES((select Id from woo.Mandator where Name='Mandator 1'), 'Pear')
+INSERT INTO [demo].[Product] (MandatorId, Name) VALUES((select Id from woo.Mandator where Name='Mandator 1'), 'Lemon')
+INSERT INTO [demo].[Product] (MandatorId, Name) VALUES((select Id from woo.Mandator where Name='Mandator 1'), 'Peach')
+INSERT INTO [demo].[Product] (MandatorId, Name) VALUES((select Id from woo.Mandator where Name='Mandator 1'), 'Apricot')
 
 
+INSERT INTO [demo].[Product] (MandatorId, Name) VALUES((select Id from woo.Mandator where Name='Mandator 2'), 'Chocholate')
+INSERT INTO [demo].[Product] (MandatorId, Name) VALUES((select Id from woo.Mandator where Name='Mandator 2'), 'French fries')
+INSERT INTO [demo].[Product] (MandatorId, Name) VALUES((select Id from woo.Mandator where Name='Mandator 2'), 'Steak')
+INSERT INTO [demo].[Product] (MandatorId, Name) VALUES((select Id from woo.Mandator where Name='Mandator 2'), 'Brownies')
+INSERT INTO [demo].[Product] (MandatorId, Name) VALUES((select Id from woo.Mandator where Name='Mandator 2'), 'Toblerone')

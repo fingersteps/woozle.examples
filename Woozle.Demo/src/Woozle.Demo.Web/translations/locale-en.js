@@ -3,7 +3,7 @@
     "LOGIN" : "Login",
     "LOGOUT" : "Logout",
     "ABOUT" : "About",
-    "WELCOME" : "Welcome to Woozle.",
+    "WELCOME" : "Welcome to ",
     "SEARCH_PRODUCTS" : "Search products",
     "NAME" : "Name",
     "MANDATOR" : "Mandator"

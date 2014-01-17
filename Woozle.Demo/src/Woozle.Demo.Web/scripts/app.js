@@ -13,7 +13,8 @@ angular.module('Woozle.DemoApplication', ['ngRoute', 'ngResource', 'restangular'
                 controller:  'LoginCtrl'
             })
             .when('/main', {
-                templateUrl: 'views/main.html'
+                templateUrl: 'views/main.html',
+                controller:  'MainCtrl'
             })
             .when('/SearchProductsV1', {
                 templateUrl: 'views/searchProducts.html',

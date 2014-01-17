@@ -43,7 +43,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Woozle Demo Application</a>
+          <a class="navbar-brand" href="#main">Woozle Demo Application</a>
         </div>
         <div class="collapse navbar-collapse" ng-controller="NavigationCtrl">
             <div ng-hide="showNavigation">
@@ -54,7 +54,7 @@
             <div ng-show="showNavigation">
                     <ul class="nav navbar-nav">
                          <li class="dropdown" ng-repeat="module in modules">
-                          <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{module.TranslatedValue}}<b class="caret"></b></a>
+                          <a href="" class="dropdown-toggle" data-toggle="dropdown">{{module.TranslatedValue}}<b class="caret"></b></a>
                             <ul class="dropdown-menu">
                               <li ng-repeat="item in module.Items"><a href="#{{item.LogicalId}}">{{item.TranslatedValue}}</a></li>
                             </ul>
@@ -97,6 +97,7 @@
 
 <!-- build:js scripts/scripts.js -->
 <script src="scripts/app.js"></script>
+<script src="scripts/controllers/main.js"></script>
 <script src="scripts/services/LoginContextService.js"></script>
 <script src="scripts/services/UserService.js"></script>
 <script src="scripts/services/ProductService.js"></script>
@@ -106,6 +107,7 @@
 <script src="scripts/controllers/searchProducts.js"></script>
 <script src="scripts/controllers/login.js"></script>
 <script src="scripts/controllers/navigation.js"></script>
+
 
 <!-- endbuild -->
 

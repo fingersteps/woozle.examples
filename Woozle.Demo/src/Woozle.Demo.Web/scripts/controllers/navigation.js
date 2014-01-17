@@ -8,7 +8,7 @@ angular.module('Woozle.DemoApplication')
         LoginContextService.refreshLoginContext();
 
         $scope.$on('loginContextChanged', function() {
-
+            console.log('login context changed!');
             var isLoggedIn = LoginContextService.isLoggedIn();
             if(isLoggedIn) {
                     $scope.showNavigation = isLoggedIn;

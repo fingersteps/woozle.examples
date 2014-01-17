@@ -182,6 +182,7 @@
     <Content Include="robots.txt" />
     <Content Include="scripts\app.js" />
     <Content Include="scripts\controllers\login.js" />
+    <Content Include="scripts\controllers\main.js" />
     <Content Include="scripts\controllers\navigation.js" />
     <Content Include="scripts\controllers\searchProducts.js" />
     <Content Include="scripts\services\AuthenticationService.js" />

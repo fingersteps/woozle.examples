@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
-<package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd">
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>Woozle</id>
-    <version>0.0.11-prerelease</version>
+    <version>0.0.1</version>
     <title>Woozle</title>
     <authors>pr,as</authors>
     <owners>pr,as</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>Woozle is a business webapplication framework based on Servicestack which gives your webapplication valueable multitenancy capabilities. Woozle will increase your development speed and helps you to achieve the return on investment faster.</description>
+    <description>Woozle is a .NET business application framework which will increase your development speed and helps you to achieve the return on investment faster.</description>
     <dependencies>
       <dependency id="ServiceStack.Text" version="[3.9.71]" />
       <dependency id="ServiceStack.Redis" version="[3.9.71]" />
@@ -22,6 +22,7 @@
       <reference file="Woozle.dll" />
       <reference file="Woozle.Model.dll" />
       <reference file="Woozle.Persistence.dll" />
+      <reference file="Woozle.Persistence.Ef.dll" />
     </references>
   </metadata>
 </package>
